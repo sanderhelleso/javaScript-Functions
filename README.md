@@ -43,9 +43,3 @@ function createElement(type, id, classes, text, eventType, eventFunction, parent
 		return ele;
 	}
 }
-
-	// else return the created element
-	else {
-		return ele;
-	}
-}
