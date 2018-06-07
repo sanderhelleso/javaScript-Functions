@@ -4,7 +4,12 @@
 <p>Really handy when creating elements is a common part of the application, cleans up the main code and gives you more flexibility when it comes to DOM manipulation</p>
 
 ```javascript
-function createElement(type, id, classes, text, eventType, event, parent) {
+// basic example on how to use the function
+const htmlElement = createElement("h1", "mainHeading", "class1 class2 class3", "I love JS", "click", "myFunction");
+document.querySelector("#heading").appendChild(htmlElement);
+htmlElement.click();
+
+function createElement(type, id, classes, text, eventType, eventFunction, parent) {
 	// create an element with the given type
 	const ele = document.createElement(type);
 
@@ -25,13 +30,19 @@ function createElement(type, id, classes, text, eventType, event, parent) {
 
 	// assign the element an event listener if a event type and event is present
 	if (eventType != undefined && event != undefined) {
-		ele.addEventListener(eventType, event);
+		ele.addEventListener(eventType, eval(eventFunction));
 	}
 
 	// append the element to a gived parent if present
 	if (parent != undefined) {
 		parent.append(ele);
 	}
+
+	// else return the created element
+	else {
+		return ele;
+	}
+}
 
 	// else return the created element
 	else {
