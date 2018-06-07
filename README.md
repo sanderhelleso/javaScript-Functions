@@ -2,7 +2,7 @@
 
 <h2>A resusable function for createing specific elements and assign needed functionality to it like id, classes or events</h2>
 <p>Really handy when creating elements is a common part of the application, cleans up the main code and gives you more flexibility when it comes to DOM manipulation</p>
-
+```javaScript
 function createElement(type, id, classes, text, eventType, event, parent) {
 	// create an element with the given type
 	const ele = document.createElement(type);
@@ -37,3 +37,4 @@ function createElement(type, id, classes, text, eventType, event, parent) {
 		return ele;
 	}
 }
+```
