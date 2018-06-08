@@ -1,5 +1,5 @@
 /****  A resusable function for createing specific elements and assign needed functionality to it like id, classes or events ****/
-function createElement(type, id, classes, text, eventType, event, parent) {
+function createElement(type, id, classes, text, eventType, eventFunction, parent) {
 	// create an element with the given type
 	const ele = document.createElement(type);
 
@@ -20,7 +20,7 @@ function createElement(type, id, classes, text, eventType, event, parent) {
 
 	// assign the element an event listener if a event type and event is present
 	if (eventType != undefined && event != undefined) {
-		ele.addEventListener(eventType, event);
+		ele.addEventListener(eventType, eventFunction);
 	}
 
 	// append the element to a gived parent if present
