@@ -33,9 +33,9 @@ function createElement(type, id, classes, text, eventType, eventFunction, parent
 		ele.addEventListener(eventType, eval(eventFunction));
 	}
 
-	// append the element to a gived parent if present
+	// append the element to a given parent if present
 	if (parent != undefined) {
-		parent.append(ele);
+		parent.appendChild(ele);
 	}
 
 	// else return the created element
